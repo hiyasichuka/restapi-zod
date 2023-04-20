@@ -20,5 +20,9 @@
   "dependencies": {
     "fastify": "^4.15.0",
     "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
   }
 }
