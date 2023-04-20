@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/hiyasichuka/restapi-zod/issues"
   },
-  "homepage": "https://github.com/hiyasichuka/restapi-zod#readme"
+  "homepage": "https://github.com/hiyasichuka/restapi-zod#readme",
+  "dependencies": {
+    "fastify": "^4.15.0",
+    "zod": "^3.21.4"
+  }
 }
