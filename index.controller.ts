@@ -1,6 +1,5 @@
 import { RouteHandle } from './types/typeUtils'
-import { GetUsersInput, GetUsersOutput } from './index.schema'
-import { FastifyReply } from 'fastify'
+import { GetUsersInput } from './index.schema'
 
 export const getUsersHandler: RouteHandle<{
   Querystring: GetUsersInput
