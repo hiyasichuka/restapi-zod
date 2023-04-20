@@ -1,38 +1,15 @@
 import fastify from 'fastify'
-interface IQuerystring {
-  username: string
-  password: string
-}
-interface IHeaders {
-  'h-Custom': string
-}
+import indexRoute from './index.route'
 
 const server = fastify({
-  logger: {
-    transport: {
-      target: 'pino-pretty'
-    }
-  }
+  // logger: {
+  //   transport: {
+  //     target: 'pino-pretty'
+  //   }
+  // }
 })
 
-server.get('/', async function () {
-  return { message: 'Hello world.' }
-})
-
-server.get('/ping', async (request, reply) => {
-  return 'pong\n'
-})
-
-server.get<{
-  Querystring: IQuerystring
-  Headers: IHeaders
-}>('/auth', async (request, reply) => {
-  const { username, password } = request.query
-  const customerHeader = request.headers['h-Custom']
-  // do something with request data
-
-  return `logged in!`
-})
+server.register(indexRoute, { prefix: '/users' })
 
 server.listen({ port: 8080 }, (err, address) => {
   if (err) {

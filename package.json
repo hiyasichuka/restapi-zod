@@ -21,7 +21,9 @@
   "homepage": "https://github.com/hiyasichuka/restapi-zod#readme",
   "dependencies": {
     "fastify": "^4.15.0",
-    "pino-pretty": "^10.0.0"
+    "pino-pretty": "^10.0.0",
+    "zod": "^3.19.1",
+    "zod-to-json-schema": "^3.18.1"
   },
   "devDependencies": {
     "@types/node": "^18.15.12",
