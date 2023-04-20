@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "start": "tsnd index.ts",
+    "start": "tsnd -T --respawn index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
