@@ -17,6 +17,12 @@ const server = (0, fastify_1.default)();
 server.get('/ping', (request, reply) => __awaiter(void 0, void 0, void 0, function* () {
     return 'pong\n';
 }));
+server.get('/auth', (request, reply) => __awaiter(void 0, void 0, void 0, function* () {
+    const { username, password } = request.query;
+    const customerHeader = request.headers['h-Custom'];
+    // do something with request data
+    return `logged in!`;
+}));
 server.listen({ port: 8080 }, (err, address) => {
     if (err) {
         console.error(err);
