@@ -6,9 +6,14 @@ export const getUsersHandler: RouteHandle<{
   Reply: any
 }> = async (request, reply) => {
   console.log('*********************************')
-  console.log(`QueryString:${request.query.tag_ids}`)
+  const str = request.query.tag_ids
+  let arr = ''
+  if (str) {
+    arr = JSON.parse(str)
+  }
+  console.log(`QueryString:${str}`)
   reply
     .code(200)
     .header('Content-Type', 'application/json; charset=utf-8')
-    .send({ tag_ids: request.query.tag_ids })
+    .send({ tag_ids: arr })
 }

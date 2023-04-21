@@ -31,7 +31,7 @@ export const getUsersInputSchema = z.object({
   page: z.number().default(1).optional(),
   limit: z.number().min(0).max(100).default(10).optional(),
   search_key: z.string().optional(),
-  tag_ids: z.array(z.number()).optional()
+  tag_ids: z.string().regex(new RegExp('^\\[\\d+(,\\d+)*\\]$')).optional()
 })
 
 export type GetUsersInput = z.infer<typeof getUsersInputSchema>
